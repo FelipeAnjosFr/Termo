@@ -24,7 +24,7 @@ def start():
         system("cls")
         print("Até logo!")
         exit()
-    else:
+    elif choice > 3 or choice_game > 3:
         print("Digite um valor válido")
         sleep(2)
         system("cls")
@@ -37,8 +37,15 @@ def menu():
     print("="*80)
 
     print("DIgite para: \n \n[1]| JOGAR \n[2]| COMO JOGAR \n[3]| SAIR \n")
-    choice = int(input("Escolha: "))
-    
+
+    while True:
+        try:
+            choice = int(input("Escolha: "))
+        except ValueError:
+            print("Escolha inválida.")
+        else:
+            break
+        
     return choice
 
 def menu_game():
@@ -47,7 +54,14 @@ def menu_game():
     print("="*80)
 
     print("DIgite para: \n \n[1]| TERMO \n[2]| DUETO \n[3]| QUARTETO \n")
-    choice = int(input("Escolha: "))
+    
+    while True:
+        try:
+            choice = int(input("Escolha: "))
+        except ValueError:
+            print("Escolha inválida.")
+        else:
+            break
 
     return choice
 
@@ -61,26 +75,12 @@ def game1():
     print("="*80)
     while True:
         while True:
-            while True:
-                resp = str(input("-->: "))
-                if resp not in words:
-                    print("Palavra invalida.")
-                else:
-                    resp.upper()
-                    list(resp)
-                    break
-            for n in range(0,len(nope)):
-                if nope[n] in resp:
-                    print("="*80)
-                    print("Não são permitidos números ou caracteres especiais.")
-                    erro = True
-                    break
-                else:
-                    erro = False
-            if len(resp) != 5:
-                print("Coloque uma palavra com 5 letras.")
-                print("="*80)
-            elif erro == False:
+            resp = str(input("-->: "))
+            if resp not in words:
+                print("Palavra invalida.")
+            else:
+                resp.upper()
+                list(resp)
                 break
 
         for c in range(0,5):
@@ -140,26 +140,12 @@ def game2():
     print("="*80)
     while True:
         while True:
-            while True:
-                resp = str(input("-->: "))
-                if resp not in words:
-                    print("Palavra invalida.")
-                else:
-                    resp.upper()
-                    list(resp)
-                    break
-            for n in range(0,len(nope)):
-                if nope[n] in resp:
-                    print("="*80)
-                    print("Não são permitidos números ou caracteres especiais.")
-                    erro = True
-                    break
-                else:
-                    erro = False
-            if len(resp) != 5:
-                print("Coloque uma palavra com 5 letras.")
-                print("="*80)
-            elif erro == False:
+            resp = str(input("-->: "))
+            if resp not in words:
+                print("Palavra invalida.")
+            else:
+                resp.upper()
+                list(resp)
                 break
 
         for c in range(0,5):
@@ -219,7 +205,14 @@ def game2():
             print("="*80)
             print(f"As palavras eram: {''.join(word)}, {''.join(word2)}\n")
             print("Digite para: \n \n[0]| Voltar ao menu \n")
-            choice3 = int(input("Escolha: "))
+            while True:
+                try:
+                    choice3 = int(input("Escolha: "))
+                except ValueError:
+                    print("Escolha inválida.")
+                else:
+                    break
+
             if choice3 == 0:
                 correct.clear()
                 correct2.clear()
@@ -242,7 +235,14 @@ def rules():
     print("="*80)
     print("DIgite para: \n \n[0]|Voltar para o menu \n")
 
-    choice2 = int(input("Escolha: "))
+    while True:
+        try:
+            choice2 = int(input("Escolha: "))
+        except ValueError:
+            print("Escolha inválida")
+        else:
+            break
+
     if choice2 == 0:
         system("cls")
         start()
