@@ -19,12 +19,17 @@ def start():
         elif choice_game == 3:
             system("cls")
             game3()
+        elif choice_game == 0:
+            system("cls")
+            start()
     elif choice == 2:
         system("cls")
         rules()
     elif choice == 3:
         system("cls")
-        print("Até logo!")
+        print("="*80)
+        print(" "*32,"ATÉ LOGO!")
+        print("="*80)
         exit()
     elif choice > 3 or choice_game > 3:
         print("Digite um valor válido")
@@ -35,10 +40,10 @@ def start():
 
 def menu():
     print("=" * 80)
-    print(" " * 36, "TERMO")
+    print(" " * 36, "\033[1;32mT\033[m\033[1;30mE\033[m\033[1;35mR\033[m\033[1;31mM\033[m\033[1;36mO\033[m")
     print("=" * 80)
 
-    print("DIgite para: \n \n[1]| JOGAR \n[2]| COMO JOGAR \n[3]| SAIR \n")
+    print("DIgite para: \n \n[1]\033[1;32m|\033[m JOGAR \n[2]\033[1;33m|\033[m COMO JOGAR \n[3]\033[1;31m|\033[m SAIR \n")
 
     while True:
         try:
@@ -53,10 +58,12 @@ def menu():
 
 def menu_game():
     print("=" * 80)
-    print(" " * 36, "TERMO")
+    print(" " * 36, "\033[1;32mJ\033[m\033[1;30mO\033[m\033[1;35mG\033[m\033[1;31mA\033[m\033[1;36mR\033[m")
     print("=" * 80)
 
-    print("DIgite para: \n \n[1]| TERMO \n[2]| DUETO \n[3]| QUARTETO \n")
+    print(
+        "DIgite para: \n \n[1]\033[1;32m|\033[m TERMO \n[2]\033[1;33m|\033[m DUETO \n[3]\033[1;31m|\033[m QUARTETO \n\n[0]\033[1;31m|\033[m VOLTAR \n"
+        )
 
     while True:
         try:
@@ -75,7 +82,7 @@ def game1():
     correct = []
 
     print("=" * 80)
-    print(" " * 36, "TERMO")
+    print(" " * 36, "\033[1;32mT\033[m\033[1;30mE\033[m\033[1;35mR\033[m\033[1;31mM\033[m\033[1;36mO\033[m")
     print("=" * 80)
     while True:
         while True:
@@ -140,7 +147,7 @@ def game2():
     correct2 = []
 
     print("=" * 80)
-    print(" " * 36, "DUETO")
+    print(" " * 36, "\033[1;32mD\033[m\033[1;30mU\033[m\033[1;35mE\033[m\033[1;31mT\033[m\033[1;36mO\033[m")
     print("=" * 80)
     while True:
         while True:
@@ -168,7 +175,6 @@ def game2():
             elif resp[c] in word2 and resp[c] != word2[c]:
                 correct2.append(resp[c])
 
-        print(correct)
         print("=" * 22, end=" ")
         print(" ", end=" ")
         print("=" * 22)
@@ -247,7 +253,9 @@ def game3():
     correct4 = []
 
     print("=" * 80)
-    print(" " * 36, "QUARTETO")
+    print(" " * 36,
+           "\033[1;32mQ\033[m\033[1;30mU\033[m\033[1;35mA\033[m\033[1;31mR\033[m\033[1;36mT\033[m\033[1;32mE\033[m\033[1;30mT\033[m\033[1;31mO\033[m"
+         )
     print("=" * 80)
     while True:
         while True:
@@ -398,13 +406,13 @@ def rules():
     print(" " * 36, "REGRAS")
     print("=" * 80)
     print(
-        "\nVocê tem 6 tentativas para acertar a palavra que contém 5 letras. \nAs dicas mostraram o quanto esta perto da solução. \nEscreva todas as palavras sem os seus acentos."
+        "\nVocê tem 5, 6 ou 9 tentativas (5 = Termo, 6 = Dueto, 9 = Quarteto) para acertar a(s) palavra(s) que tem 5 letras. \nAs dicas mostraram o quanto esta perto da solução. \nEscreva todas as palavras sem os seus acentos."
     )
     print(
         " \nDICAS: \n\033[1;32mVERDE\033[m = Letra certa no lugar certo. \n\033[1;33mAMARELO\033[m = Letra está na palavra, porém no lugar errado.\n\033[1;31mVERMELHO\033[m = Letra não está na palavra"
     )
     print("=" * 80)
-    print("DIgite para: \n \n[0]|Voltar para o menu \n")
+    print("DIgite para: \n \n[0]\033[1;31m|\033[m Voltar\n")
 
     while True:
         try:
