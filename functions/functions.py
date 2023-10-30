@@ -359,7 +359,7 @@ def game3():
                 correct2.clear()
                 system("cls")
                 start()
-        if cont == 6:
+        if cont == 9:
             print("=" * 80)
             print(" " * 32, "VOCÊ PERDEU!!")
             print("=" * 80)
